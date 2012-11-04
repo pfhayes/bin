@@ -1,3 +1,6 @@
 [submodule "src/codemod"]
 	path = src/codemod
 	url = git@github.com:pfhayes/codemod.git
+[submodule "src/anrar"]
+	path = src/anrar
+	url = git@github.com:pfhayes/anrar.git
