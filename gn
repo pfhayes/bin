@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+#
+# Shortcut for growlnotify
+
+growlnotify -t "$1" -m "" -p 1

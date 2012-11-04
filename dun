@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+#
+# Run after long-running tasks, to receive notifications when finished.
+# Ex: sleep 500; dun
+
+echo ""
+gn "Done"

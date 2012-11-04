@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+#
+# Open files in git repository based off partial names
+# Ex:
+#   Open all controllers
+#     vig controller
+
+vim -O `git ls-files | uniq | grep -i $1`

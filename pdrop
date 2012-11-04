@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+#
+# Store a file in dropbox, publicly
+
+cp "$1" "$DROPBOX_HOME/Public"

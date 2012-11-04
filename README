@@ -1,0 +1,6 @@
+A bunch of utilities I like to use
+
+Depends on the following environment variables
+  $BIN_HOME: Where these files are kept
+  $DEV_HOME: Where I keep my development environment
+  $DROPBOX_HOME: Where I keep my Dropbox

@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+#
+# Tell me about all my git repositories
+
+pushd $DEV_HOME
+for DIR in `ls`; do
+  echo $DIR
+  pushd $DIR
+  git status 2>/dev/null
+  popd
+done
+popd

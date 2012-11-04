@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+#
+# Find a file in a git repository by regex.
+# Ex:
+#   pop BaseViewController.scala | xargs git blame
+#   vim `pop Base.*Controller.scala`
+
+git ls-files | uniq | grep -i $1 | head -1

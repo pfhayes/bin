@@ -1,0 +1,18 @@
+#!/bin/zsh
+#
+# For a list of files, print out which files are symlinks and
+# where they lead
+# Ex: ls | links
+
+while IFS= read -r line; do
+  RET="$(readlink $line)"
+  if [ -n "$RET" ]; then
+    printf "%s" "$line"
+    while [ -n "$RET" ]; do
+      printf " -> %s" "$RET"
+      RET="$(readlink $RET)"
+    done
+    printf "\n"
+  fi
+done
+
