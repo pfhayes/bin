@@ -1,0 +1,3 @@
+This is where the git submodules go.
+For sufficiently complex scripts, they are put in their own git repositories and linked here.
+For insufficiently complex scripts, they are created inline under bin/
