@@ -4,3 +4,6 @@
 [submodule "src/anrar"]
 	path = src/anrar
 	url = git@github.com:pfhayes/anrar.git
+[submodule "src/shorten"]
+	path = src/shorten
+	url = git@github.com:pfhayes/shorten.git
