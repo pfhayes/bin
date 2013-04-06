@@ -5,4 +5,13 @@
 #   pop BaseViewController.scala | xargs git blame
 #   vim `pop Base.*Controller.scala`
 
-git ls-files | uniq | grep -i $1 | head -1
+FILES_CMD="git ls-files | uniq | grep -i $1"
+LINES=`eval $FILES_CMD | wc -l`
+if [ "$LINES" -eq 0 ]; then
+  echo
+elif [ "$LINES" -gt 1 ]; then
+  eval $FILES_CMD >&2
+  exit 1
+else
+  eval $FILES_CMD
+fi

@@ -5,4 +5,12 @@
 #   Open all controllers
 #     vig controller
 
-vim -O `git ls-files | uniq | grep -i $1`
+FILES_CMD="git ls-files | uniq | grep -i $1"
+LINES=`eval $FILES_CMD | wc -l`
+if [ "$LINES" -eq 0 ]; then
+  echo
+elif [ "$LINES" -gt 3 ]; then
+  eval $FILES_CMD
+else
+  vim -O `eval $FILES_CMD`
+fi
