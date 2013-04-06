@@ -4,3 +4,16 @@ Depends on the following environment variables
   $BIN_HOME: Where these files are kept
   $DEV_HOME: Where I keep my development environment
   $DROPBOX_HOME: Where I keep my Dropbox
+
+allgits   - Gives the status of all git repos in a directory
+anrar     - Cleanly unrars many .rar files with the same password
+codemod   - Fork of https://github.com/facebook/codemod, adds support for crawling with `git ls-files`
+drop      - Move files to dropbox
+dun       - Pop up a growl box. Used as in `sleep 1000; dun`
+gn        - Shortcut for growl notifying in scripts
+links     - Show all symlinks and what they resolve to
+pdrop     - Move files to dropbox/public
+pop       - Finds a single file by a substring of its name. Used as in vim `pop SomeFilesName` to open a file with a long path.
+shorten   - Shortens a url at http://phay.es.
+trimpath  - Removes extraneous elements from the $PATH
+vig       - Opens files by name substrings. Like pop, but for vim.
