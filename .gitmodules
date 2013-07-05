@@ -7,3 +7,6 @@
 [submodule "src/shorten"]
 	path = src/shorten
 	url = git@github.com:pfhayes/shorten.git
+[submodule "src/control"]
+	path = src/control
+	url = git@github.com:pfhayes/control.git
