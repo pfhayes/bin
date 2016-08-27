@@ -1,16 +1,20 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 #
 # Open files in git repository based off partial names
 # Ex:
 #   Open all controllers
 #     vig controller
 
-FILES_CMD="git ls-files | uniq | grep -i $1"
-LINES=`eval $FILES_CMD | wc -l`
-if [ "$LINES" -eq 0 ]; then
+export IFS=$'\n'
+LINES=($(git ls-files | uniq | grep -i $1))
+LINES_COUNT=${#LINES[@]}
+
+if [ "$LINES_COUNT" -eq 0 ]; then
   echo
-elif [ "$LINES" -gt 3 ]; then
-  eval $FILES_CMD
+elif [ "$LINES_COUNT" -gt 3 ]; then
+  for LINE in ${LINES[@]}; do
+    echo $LINE
+  done
 else
-  vim -O `eval $FILES_CMD`
+  exec vim -O "${LINES[@]}"
 fi

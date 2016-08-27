@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+#
+# Like vig, but with no 3 file limit
+
+FILES_CMD="git ls-files | uniq | grep -i $1"
+LINES=`eval $FILES_CMD | wc -l`
+if [ "$LINES" -eq 0 ]; then
+  echo
+else
+  exec vim -O `eval $FILES_CMD`
+fi
