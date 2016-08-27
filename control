@@ -1,1 +1,27 @@
-src/control/control.py
+#!/usr/bin/env python2
+
+import sys, subprocess
+
+if len(sys.argv) <= 3 :
+  print 'Usage: control credential_file code value'
+  print 'Credential file must contain username:password for HTTP authorization'
+  exit(1)
+
+credential_file = sys.argv[1]
+code = sys.argv[2]
+value = sys.argv[3]
+
+host='https://patrickhay.es'
+#host='localhost:5000'
+
+username_and_password = open(credential_file).readlines()[0].strip()
+
+command = ['curl',
+  '-k', # Because heroku owns my SSL cert
+  '-s', # silent
+  '-F', 'value=' + value,  # post data
+  '-u', username_and_password,  # http basic auth
+  host + '/controls/' + code,
+  ]
+
+print subprocess.check_output(command)
