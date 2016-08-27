@@ -1,0 +1,1 @@
+exec docker exec -it --user root $1 /bin/bash
