@@ -13,7 +13,7 @@ git checkout -q "$1" --
 git merge -q master
 git checkout -q master
 if [[ $(git diff "$1" --) ]]; then
-  git diff "$1" -- >&2
+  git diff master "$1" -- >&2
   exit 1
 else
   git branch -D "$1" --
