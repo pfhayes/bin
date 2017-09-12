@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+git push origin $BRANCH
+exec hub pull-request -o "$@"
+
