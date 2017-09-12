@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+F=$1
+
+if [[ $F == *.tar.gz ]]; then
+  exec tar xzvf $F
+elif [[ $F == *.tar.xz ]]; then
+  exec tar xvf $F
+elif [[ $F == *.tar.bz2 ]]; then
+  exec tar xjvf $F
+elif [[ $F == *.zip ]]; then
+  exec gunzip $F
+else
+  >&2 echo "Unknown file suffix: $F"
+  exit 1
+fi
